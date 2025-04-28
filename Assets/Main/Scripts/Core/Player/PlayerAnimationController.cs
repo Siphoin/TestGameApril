@@ -20,7 +20,6 @@ namespace TestGame.Player
         [Inject] private IHealthComponent _playerHealthComponent;
         private CompositeDisposable _disposable = new();
 
-        // Хеши параметров аниматора
         private int _isRunHash;
         private int _jumpHash;
         private int _groundedHash;
@@ -44,13 +43,11 @@ namespace TestGame.Player
 
         private void UpdateMovementAnimations()
         {
-            // Рассчитываем скорость в локальных координатах
             _animator.SetBool(_isRunHash, _movementController.IsRunning);
         }
 
         private void UpdateJumpAndFallAnimations()
         {
-            // Состояние на земле
             _animator.SetBool(_groundedHash, _movementController.IsGrounded);
             _animator.SetBool(_jumpHash, _movementController.IsJumping);
             
@@ -59,7 +56,6 @@ namespace TestGame.Player
 
         private void UpdateIdleState()
         {
-            // Активация idle, когда персонаж полностью остановился
             bool isIdle = _currentSpeedBlend < 0.01f && _movementController.IsGrounded;
             _animator.SetBool(_idleHash, isIdle);
         }
