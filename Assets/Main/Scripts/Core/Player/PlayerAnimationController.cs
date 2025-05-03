@@ -1,11 +1,10 @@
 ﻿using UnityEngine;
 using Zenject;
-
+using TestGame.HealthSystem;
+using UniRx;
 namespace TestGame.Player
 {
-    using TestGame.HealthSystem;
-    using UniRx;
-    using UnityEngine;
+   
 
     public class PlayerAnimatorController : MonoBehaviour
     {
