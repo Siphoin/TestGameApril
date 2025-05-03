@@ -4,8 +4,6 @@ using TestGame.HealthSystem;
 using UniRx;
 namespace TestGame.Player
 {
-   
-
     public class PlayerAnimatorController : MonoBehaviour
     {
         [Header("References")]
